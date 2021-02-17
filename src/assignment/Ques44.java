@@ -14,8 +14,8 @@ class Student implements java.io.Serializable {
 public class Ques44 {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        Student[] std = new Student[3];
-        for (int i = 0; i < 3; i++) {
+        Student[] std = new Student[5];
+        for (int i = 0; i < 5; i++) {
             std[i] = new Student();
             System.out.println("Enter " + (i + 1) + " employee data");
             System.out.println("Enter name");
