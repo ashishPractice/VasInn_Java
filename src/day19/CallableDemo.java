@@ -6,30 +6,23 @@ import java.util.concurrent.Executors;
 
 public class CallableDemo implements Callable {
 
-    String name;
-
-    public CallableDemo(String name){
-        this.name = name;
-    }
     @Override
     public Integer call() throws Exception {
-
-        int sum = 0;
-
-        for (int i = 1; i <= 5; i++) {
-            sum += i;
-        }
-
+        int a = 5;
+        int b = 10;
+        int sum = a + b;
         return sum;
     }
 
     public static void main(String[] args) {
+        CallableDemo c = new CallableDemo();
 
-        ExecutorService ex = Executors.newFixedThreadPool(3);
-        ex.submit(new CallableDemo("Call1"));
-        ex.submit(new CallableDemo("Call2"));
-        ex.submit(new CallableDemo("Call3"));
-        ex.shutdown();
+        try {
+           Integer sum=  c.call();
+            System.out.println(sum);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
     }
 }
